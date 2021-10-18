@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/Items.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            /*var TabItems = $('#ItemsTable');*/
+            //$('#btnShow').click(function () {
+            //    $.ajax({
+            //        type: 'GET',
+            //        url: 'api/items',
+            //        dataType: 'json',
+            //        success: function (data) {
+            //            TabItems.empty();
+            //            $.each(data, function (index, val) {
+
+            //                var Desc = val.Description;
+            //                var Name = val.Name;
+            //                var Price = val.Price;
+            //                var Avail = val.Stock_Availability;
+            //                TabItems.append('<tr><td>' + Name + '</td><td>' + Desc + '</td><td>' + Price + '</td><td>' + Avail + '</td> <input id="btndelete" type="button" value="Delete from inventory" /></tr>');
+            //            });
+
+            //        }
+            //    });
+
+            //});
+            //$('#btnAdd').click(function () {
+
+            //    var Item = {};
+            //    Item.Name = $('#prodName').val();
+            //    Item.Description = $('#prodDesc').val();
+            //    Item.Price = $('#prodPrice').val();
+            //    Item.Stock_Availability = $('#prodAvail').val();
+
+            //    $.ajax({
+            //        type: 'POST',
+            //        url: '/api/items',
+            //        data: JSON.stringify(Item),
+            //        contentType: 'application/json',
+            //        dataType: 'json',
+            //        success: function (result) {
+            //            alert('Product Added Successfully!');
+            //        }
+
+
+            //    });
+
+
+            //});
+            
+        });
+    </script>
+</head>
+
+<body>
+    <div id="addDiv">
+        <input type="text" id="prodName" placeholder="Enter Product Name" />
+        <input type="text" id="prodDesc" placeholder="Enter Product Description" />
+        <input type="text" id="prodPrice" placeholder="Enter Product Price" />
+        <input type="text" id="prodAvail" placeholder="Enter Product Stock to add" />
+
+        <input id="btnAdd" onclick="addItem()" type="button" value="Add item to inventory" />
+        <!--<input id="btnUpdate" onclick="itemUpdate()" type="button" value="Update item in inventory" />-->
+    </div>
+    <div id="divShow">
+        <input id="btnShow" type="button" onclick="showInventory()" value="Show Inventory" />
+
+    </div>
+    <div id="dataTable">
+        <table id="ItemsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody id="tblItemBody"></tbody>
+        </table>
+    </div>
+    <input type="hidden" id="prodId" readonly/>
+    <input type="hidden" id="prodNameNew" placeholder="Enter Product Name" />
+    <input type="hidden" id="prodDescNew" placeholder="Enter Product Description" />
+    <input type="hidden" id="prodPriceNew" placeholder="Enter Product Price" />
+    <input type="hidden" id="prodAvailNew" placeholder="Enter Product Stock to add" />
+    <button type="button" id="updateButton" style="display:none" onclick="itemUpdate()">Update inventory</button>
+</body>
+</html>
