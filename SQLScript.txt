@@ -1,0 +1,17 @@
+create database ShopBridge
+GO
+
+create table Items(
+id int primary key identity,
+Name nvarchar(50),
+ [Description] nvarchar(100),
+ Price int,
+ Stock_Availability int
+)
+
+insert into Items values ('Lays','Flavored chips',10,40000)
+insert into Items values ('Cheetos','Flavored chips',15,10000)
+insert into Items values ('Balaji','Flavored chips',7,20000)
+insert into Items values ('Kurkure','Flavored chips',15,30000)
+
+select * from Items
