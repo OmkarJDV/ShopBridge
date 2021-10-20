@@ -14,7 +14,6 @@ function addItem() {
         contentType: 'application/json',
         dataType: 'json',
         success: function (result) {
-            //alert('Product Added Successfully!');
             showInventory();
             clearFields();
         }
@@ -36,7 +35,6 @@ function clearFields() {
     buttonUpdate.style = "display:none";
 }
 function showInventory() {
-    //var TabItems = $('#ItemsTable');
         $.ajax({
             type: 'GET',
             url: 'api/items',
@@ -54,8 +52,8 @@ function showInventory() {
                             + "<td>" + data[i].Description + "</td>"
                             + "<td>" + data[i].Price + "</td>"
                             + "<td>" + data[i].Stock_Availability + "</td>"
-                            + "<td> <button onclick = 'itemDelete(" + data[i].id + ")'> Delete from inventory</button></td>"
-                            + "<td> <button onclick = 'activateButton(" + data[i].id + ")'> Update inventory</button></td> "
+                            + "<td> <button style='background-color:red;' class='btn btn - primary' onclick = 'itemDelete(" + data[i].id + ")'> Delete from inventory</button></td>"
+                            + "<td> <button class='btn btn - primary' onclick = 'activateButton(" + data[i].id + ")'> Update inventory</button></td> "
                             + "</tr>";
                     }
                     $('#tblItemBody').append(row);
@@ -66,6 +64,7 @@ function showInventory() {
 }
 
 function activateButton(id) {
+    
     $('#prodId').val(id);
 
     var oldId = document.getElementById('prodId');
