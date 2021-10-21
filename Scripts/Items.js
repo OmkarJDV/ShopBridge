@@ -3,10 +3,40 @@
 
 function addItem() {
     var Item = {};
-    Item.Name = $('#prodName').val();
-    Item.Description = $('#prodDesc').val();
-    Item.Price = $('#prodPrice').val();
-    Item.Stock_Availability = $('#prodAvail').val();
+
+    if ($('#prodName').val() == "") {
+        alert("Enter Item Name! ");
+        return false;
+    }
+    else {
+        Item.Name = $('#prodName').val();
+    }
+    if ($('#prodDesc').val() == "") {
+        alert("Enter Item Description! ");
+        return false;
+    }
+    else {
+        Item.Description = $('#prodDesc').val();
+    }
+    if ($('#prodPrice').val() == "") {
+        alert("Enter Item Price! ");
+        return false;
+    }
+    else {
+        Item.Price = $('#prodPrice').val();
+    }
+    if ($('#prodAvail').val() == "") {
+        alert("Enter Item Availability! ");
+        return false;
+    }
+    else {
+        Item.Stock_Availability = $('#prodAvail').val();
+    }
+
+    //Item.Name = $('#prodName').val();
+    //Item.Description = $('#prodDesc').val();
+    //Item.Price = $('#prodPrice').val();
+    //Item.Stock_Availability = $('#prodAvail').val();
 
     $.ajax({
         type: 'POST',
@@ -89,10 +119,35 @@ function activateButton(id) {
 function itemUpdate() {
     itemObj = {};
     itemObj.id = $('#prodId').val();
-    itemObj.Name = $('#prodNameNew').val();
-    itemObj.Description = $('#prodDescNew').val();
-    itemObj.Price = $('#prodPriceNew').val();
-    itemObj.Stock_Availability = $('#prodAvailNew').val();
+
+    if ($('#prodNameNew').val() == "") {
+        alert("Enter Updated Item Name! ");
+        return false;
+    }
+    else {
+        itemObj.Name = $('#prodNameNew').val();
+    }
+    if ($('#prodDescNew').val() == "") {
+        alert("Enter Updated Item Description! ");
+        return false;
+    }
+    else {
+        itemObj.Description = $('#prodDescNew').val();
+    }
+    if ($('#prodPriceNew').val() == "") {
+        alert("Enter Updated Item Price! ");
+        return false;
+    }
+    else {
+        itemObj.Price = $('#prodPriceNew').val();
+    }
+    if ($('#prodAvailNew').val() == "") {
+        alert("Enter Updated Item Availability! ");
+        return false;
+    }
+    else {
+        itemObj.Stock_Availability = $('#prodAvailNew').val();
+    }
     $.ajax({
         type: 'PUT',
         url: '/api/items/' + itemObj.id,
