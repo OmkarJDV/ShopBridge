@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Admin Page</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="Scripts/Admin.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1 style="margin-left:40px;">Admin Page</h1><br />
+    <div style="width:50%;">
+        <div id="addDiv" style="margin-left:100px;" class="form-group">
+            <input type="text" class="form-control" id="prodName" placeholder="Enter Product Name" /><br />
+            <input type="text" class="form-control" id="prodDesc" placeholder="Enter Product Description" /><br />
+            <input type="text" class="form-control" id="prodPrice" placeholder="Enter Product Price" /><br />
+            <input type="text" class="form-control" id="prodAvail" placeholder="Enter Product Stock to add" /><br />
+
+            <input id="btnAdd" class="btn btn-primary" onclick="addItem()" type="button" value="Add item to inventory" />
+            <!--<input id="btnUpdate" onclick="itemUpdate()" type="button" value="Update item in inventory" />-->
+        </div>
+
+        <div id="divShow" style="margin-left:100px;">
+            <input id="btnShow" class="btn btn-primary" type="button" onclick="showInventory()" value="Show Inventory" />
+
+        </div>  <br />
+        <div id="dataTable" style="margin-left:100px;">
+            <table class="table" id="ItemsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody id="tblItemBody"></tbody>
+            </table>
+        </div>
+        <div>
+            <div id="updateDiv" style="margin-left:100px;" class="form-group">
+                <input type="hidden" class="form-control" id="prodId" readonly /> <br />
+                <input type="hidden" class="form-control" id="prodNameNew" placeholder="Enter Product Name" /> <br />
+                <input type="hidden" class="form-control" id="prodDescNew" placeholder="Enter Product Description" /> <br />
+                <input type="hidden" class="form-control" id="prodPriceNew" placeholder="Enter Product Price" /> <br />
+                <input type="hidden" class="form-control" id="prodAvailNew" placeholder="Enter Product Stock to add" /> <br />
+                <button type="button" class="btn btn-primary" id="updateButton" style="display:none" onclick="itemUpdate()">Update inventory</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
