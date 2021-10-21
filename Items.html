@@ -5,6 +5,7 @@
     <title>Admin Page</title>
     <meta charset="utf-8" />
     <script src="Scripts/jquery-3.4.1.js"></script>
+    <link href="C:\Users\DELL USER\source\repos\AdminApplication\Content\bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="Scripts/Items.js"></script>
     <style>
@@ -16,7 +17,7 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-
+            showInventory();
 
         });
     </script>
@@ -34,12 +35,7 @@
                                                          <input id="btnAdd" class="btn btn-primary" onclick="addItem()" type="button" value="Add item to inventory" />
                                                          <!--<input id="btnUpdate" onclick="itemUpdate()" type="button" value="Update item in inventory" />-->
                                                      </div>
-
-                                                     <div id="divShow" style="margin-left:100px;">
-                                                         <input id="btnShow" class="btn btn-primary" type="button" onclick="showInventory()" value="Show Inventory" />
-
-                                                     </div>  <br />
-                                                     <div id="dataTable" style="margin-left:100px;">
+                                                     <div id="dataTable" style="margin-left:100px;"> <h2>Inventory Details</h2>
                                                          <table class="table" id="ItemsTable">
                                                              <thead>
                                                                  <tr>

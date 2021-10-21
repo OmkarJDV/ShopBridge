@@ -10,6 +10,7 @@ namespace ShopBridge.Controllers
 {
     public class ItemsController : ApiController
     {
+        //Get method that does not accept a parameter and displays entire list
         public IEnumerable<Item> Get()
         {
         
@@ -20,6 +21,8 @@ namespace ShopBridge.Controllers
         }
 
         [HttpGet]
+        //Get method that accepts a parameter and displays data corresponding to that parameter.
+        //Decorated with Http Get Attribute
         public HttpResponseMessage GetItemByID(int id )
         {
 
@@ -39,6 +42,7 @@ namespace ShopBridge.Controllers
             
         }
 
+        //Post method to add a new item to the existing data
         public HttpResponseMessage Post ([FromBody]Item item)
         {
             try
@@ -59,6 +63,8 @@ namespace ShopBridge.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e);
             }
         }
+
+        //Delete method to delete an existing item
         public HttpResponseMessage Delete( int id)
         {
 
@@ -88,6 +94,9 @@ namespace ShopBridge.Controllers
 
             }
         }
+
+        //Put method to Update an existing item from the inventory
+
         public HttpResponseMessage Put(int id, [FromBody] Item item)
         {
             try

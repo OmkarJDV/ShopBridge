@@ -1,4 +1,5 @@
-﻿
+﻿const { data } = require("jquery");
+
 
 function addItem() {
     var Item = {};
@@ -52,8 +53,8 @@ function showInventory() {
                             + "<td>" + data[i].Description + "</td>"
                             + "<td>" + data[i].Price + "</td>"
                             + "<td>" + data[i].Stock_Availability + "</td>"
-                            + "<td> <button style='background-color:red;' class='btn btn - primary' onclick = 'itemDelete(" + data[i].id + ")'> Delete from inventory</button></td>"
-                            + "<td> <button class='btn btn - primary' onclick = 'activateButton(" + data[i].id + ")'> Update inventory</button></td> "
+                            + "<td> <button style='background-color:red;' onclick = 'itemDelete(" + data[i].id + ")'> Delete from inventory</button></td>"
+                            + "<td> <button onclick = 'activateButton(" + data[i].id + ")'> Update inventory</button></td> "
                             + "</tr>";
                     }
                     $('#tblItemBody').append(row);
@@ -64,7 +65,7 @@ function showInventory() {
 }
 
 function activateButton(id) {
-    
+
     $('#prodId').val(id);
 
     var oldId = document.getElementById('prodId');
